@@ -1,5 +1,5 @@
 /* Crear base de datos */
-CREATE DATABASE RecipeApp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE Lab4;
 
 /* Crear tabla Users */
 CREATE TABLE Users (
@@ -8,5 +8,5 @@ CREATE TABLE Users (
     lastname VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
     password VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id),
+    PRIMARY KEY (id)
 )

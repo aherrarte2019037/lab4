@@ -1,2 +1,2 @@
 <?php
-$conn = new mysqli('localhost', 'root', '', 'RecipeApp');
+$conn = new mysqli('localhost', 'root', '', 'Lab4');
