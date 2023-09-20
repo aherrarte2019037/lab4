@@ -42,6 +42,7 @@ fun LoginPage(
     fun onLoginClick(context: Context) {
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(context, "Error, completa tus datos", Toast.LENGTH_SHORT).show()
+            return
         }
         val request = LoginRequest(email = email, password = password)
         scope.launch {

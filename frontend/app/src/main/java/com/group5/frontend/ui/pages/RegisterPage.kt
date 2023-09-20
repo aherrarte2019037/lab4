@@ -42,6 +42,7 @@ fun RegisterPage(
     fun onRegisterClick(context: Context) {
         if (email.isEmpty() || password.isEmpty() || firstname.isEmpty() || lastname.isEmpty()) {
             Toast.makeText(context, "Error, completa tus datos", Toast.LENGTH_SHORT).show()
+            return
         }
         val request = RegisterRequest(email, password, firstname, lastname)
         scope.launch {
