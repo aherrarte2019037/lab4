@@ -16,10 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if ($sql) {
         http_response_code(201);
-        echo json_encode(array('message' => 'Usuario registrado'));
+        echo json_encode(array('message' => 'Usuario registrado', 'success' => true));
     } else {
         http_response_code(500);
-        echo json_encode(array('message' => 'Error en el servidor interno'));
+        echo json_encode(array('message' => 'Error en el servidor interno', 'success' => false));
     }
 
 } else {
