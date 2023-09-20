@@ -28,12 +28,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             http_response_code(200);
             echo json_encode(array('token' => $token, 'message' => 'Inicio de sesión exitoso', 'data' => $payload, 'success' => true));
         } else {
-            http_response_code(400);
-            echo json_encode(array('message' => 'Las credenciales son incorrectas', 'success' => false));
+            http_response_code(200);
+            echo json_encode(array('message' => 'Credenciales incorrectas', 'success' => false));
         }
     } else {
-        http_response_code(400);
-        echo json_encode(array('message' => 'El usuario no existe',  'success' => false));
+        http_response_code(200);
+        echo json_encode(array('message' => 'Usuario no registrado',  'success' => false));
     }
 }
 ?>

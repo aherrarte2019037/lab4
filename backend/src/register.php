@@ -15,13 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = $conn->query("INSERT INTO Users (firstname, lastname, email, password) VALUES ('$firstname', '$lastname', '$email', '$password_hashed')");
     
     if ($sql) {
-        http_response_code(201);
+        http_response_code(200);
         echo json_encode(array('message' => 'Usuario registrado', 'success' => true));
     } else {
-        http_response_code(500);
+        http_response_code(200);
         echo json_encode(array('message' => 'Error en el servidor interno', 'success' => false));
     }
 
-} else {
-    http_response_code(404);
 }
+?>

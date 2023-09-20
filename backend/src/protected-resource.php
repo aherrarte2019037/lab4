@@ -19,10 +19,10 @@ if (isset($authHeader['Authorization']) && $_SERVER['REQUEST_METHOD'] == 'POST')
         http_response_code(200);
         echo json_encode(array('message' => 'Recurso protegido', 'success' => true, 'data' => $decoded));
     } catch (Exception $e) {
-        http_response_code(401);
+        http_response_code(200);
         echo json_encode(array('message' => 'Autenticación requerida', 'success' => false));
     }
 } else {
-    http_response_code(401);
+    http_response_code(200);
     echo json_encode(array('message' => 'Autenticación requerida', 'success' => false));
 }
