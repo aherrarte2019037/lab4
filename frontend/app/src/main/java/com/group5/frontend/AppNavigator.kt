@@ -35,7 +35,7 @@ fun AppNavigator(preferenceManager: PreferenceManager, apiService: ApiService) {
 
     NavHost(navController, startDestination = "login") {
         composable("login") { LoginPage(navController, preferenceManager, apiService ) }
-        composable("register") { RegisterPage(navController, preferenceManager) }
+        composable("register") { RegisterPage(navController, apiService) }
         composable("home") { HomePage(navController, preferenceManager) }
         composable("loading") { LoadingPage() }
     }

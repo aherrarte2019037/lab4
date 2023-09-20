@@ -29,12 +29,8 @@ fun HomePage(navController: NavController, preferenceManager: PreferenceManager)
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Welcome Home!", style = MaterialTheme.typography.titleMedium)
+        Text(text = "Bievenido!", style = MaterialTheme.typography.displaySmall)
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = {}) {
-            Text("Explore")
-        }
-        Spacer(modifier = Modifier.height(8.dp))
         Button(onClick = {
             scope.launch {
                 preferenceManager.clearAuthToken()
@@ -43,7 +39,7 @@ fun HomePage(navController: NavController, preferenceManager: PreferenceManager)
                 }
             }
         }) {
-            Text(text = "Logout")
+            Text(text = "Cerrar sesión")
         }
     }
 }

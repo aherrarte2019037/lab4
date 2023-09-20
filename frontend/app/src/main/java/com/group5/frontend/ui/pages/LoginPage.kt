@@ -2,6 +2,7 @@ package com.group5.frontend.ui.pages
 
 import android.content.Context
 import android.widget.Toast
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -65,30 +67,32 @@ fun LoginPage(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         val context = LocalContext.current
 
-        Text(text = "Login Screen", style = MaterialTheme.typography.titleMedium)
+        Text(text = "Iniciar Sesión", style = MaterialTheme.typography.displaySmall)
         Spacer(modifier = Modifier.height(16.dp))
         OutlinedTextField(
             value = email,
             onValueChange = { setEmail(it) },
-            label = { Text("Email") },
+            label = { Text("Correo") },
         )
         Spacer(modifier = Modifier.height(16.dp))
         OutlinedTextField(
             value = password,
             onValueChange = { setPassword(it) },
-            label = { Text("Password") },
+            label = { Text("Contraseña") },
         )
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = { onLoginClick(context) }) {
-            Text(text = "Login")
+            Text(text = "Ingresar")
         }
         Spacer(modifier = Modifier.height(8.dp))
         TextButton(onClick = { navController.navigate("register") }) {
-            Text("Don't have an account? Register")
+            Text("No tienes una cuenta? Registrate")
         }
     }
 }
